@@ -1,13 +1,13 @@
-package be.ehb.thebookstore;
+package be.ehb.thebookshop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ThebookstoreApplication {
+public class ThebookshopApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ThebookstoreApplication.class, args);
+        SpringApplication.run(ThebookshopApplication.class, args);
     }
 
 }
