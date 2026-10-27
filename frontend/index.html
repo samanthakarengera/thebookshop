@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookshop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>The Bookshop </h1>
+    </header>
+
+    <main>
+        <h2>Maak een account</h2>
+        <p>Welkom bij The Bookshop!</p>
+
+        <form id="registerForm">
+            <label for="name">Naam</label>
+            <input type="text" id="name" placeholder="Uw naam" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Uw e-mailadres" required>
+
+            <label for="password">Wachtwoord</label>
+            <input type="password" id="password" placeholder="Tenminste 8 tekens." minlength="8" required>
+
+            <button type="submit">Registreer</button>
+        </form>
+
+        <p id="message"></p>
+    </main>
+
+    <footer>
+        The safe space voor boekwormen :) 
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
