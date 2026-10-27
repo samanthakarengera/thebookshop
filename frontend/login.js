@@ -30,9 +30,11 @@ loginForm.addEventListener("submit", async function (event) {
                 data.detail || data.message || "Login mislukt."
             );
         }
-
-        message.textContent = "Succesvol ingelogd! Welkom, " + data.name;
+        
+        message.textContent = "Succesvol ingelogd! ";
         message.style.color = "green";
+        // Doorsturen naar de boekenpagina na succesvol inloggen.
+        // window.location.href = "books.html";
 
     } catch (error) {
         message.textContent = error.message === "Mislukt."

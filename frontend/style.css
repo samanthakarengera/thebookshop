@@ -82,3 +82,42 @@ footer {
     color: #987b88;
     padding: 15px;
 }
+#searchInput {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#bookList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.book-card {
+    padding: 15px;
+    border: 1px solid #f0d6e0;
+    border-radius: 8px;
+    background-color: #fff8fb;
+}
+
+.book-card h3 {
+    color: #bd7893;
+    margin-top: 0;
+}
+
+.book-card p {
+    text-align: left;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#bookCount {
+    color: #987b88;
+}
+
+@media (min-width: 650px) {
+    #bookList {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

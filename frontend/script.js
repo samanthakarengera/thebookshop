@@ -33,8 +33,10 @@ form.addEventListener("submit", async function (event) {
             );
         }
 
-        message.textContent = "Account succesvol aangemaakt! ";
-        message.style.color = "green";
+        //message.textContent = "Account succesvol aangemaakt! ";
+        //message.style.color = "green";
+        // Doorsturen naar de boekenpagina na succesvol inloggen.
+        window.location.href = "books.html";
 
         form.reset();
 
