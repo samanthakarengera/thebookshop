@@ -74,6 +74,12 @@ function displayBooks(bookArray) {
         card.appendChild(description);
         card.appendChild(price);
         card.appendChild(stock);
+            const detailsButton = document.createElement("button");
+            detailsButton.textContent = "Bekijk details";
+            detailsButton.addEventListener("click", function () {
+                window.location.href = "book-detail.html?id=" + book.id;
+            });
+        card.appendChild(detailsButton);
         card.appendChild(reserveButton);
 
         bookList.appendChild(card);
@@ -142,9 +148,10 @@ async function reserveBook(bookId) {
         const data = await response.json();
 
         if (!response.ok) {
-            throw new Error(
-                data.detail || "Kan dit boek niet reserveren."
-            );
+            message.textContent =
+                "Fout " + response.status + ": " + JSON.stringify(data);
+            message.style.color = "red";
+            return;
         }
 
         message.textContent =

@@ -81,7 +81,8 @@ public class SecurityConfig {
                                 "/api/books",
                                 "/api/books/**"
                         ).permitAll()
-                        .requestMatchers("/api/users/me","/api/reservations/**").authenticated()
+                        .requestMatchers("/api/users/me",
+                                "/api/reservations", "/api/reservations/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .formLogin(form -> form.disable())
