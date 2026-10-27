@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - The Bookshop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>The Bookshop</h1>
+    </header>
+
+    <main>
+        <h2>Welkom terug!</h2>
+        <p>Log in jouw account.</p>
+
+        <form id="loginForm">
+            <label for="email">E-mail</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Uw e-mailadres"
+                required
+            >
+
+            <label for="password">Wachtwoord</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Uw wachtwoord"
+                required
+            >
+
+            <button type="submit">Log in</button>
+        </form>
+
+        <p id="message"></p>
+
+        <p class="account-link">
+            Nog geen account?
+            <a href="index.html">Registreer hier.</a>
+        </p>
+    </main>
+
+    <footer>
+        The safe space voor boekwormen :) 
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
