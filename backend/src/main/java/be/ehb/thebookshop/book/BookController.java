@@ -27,7 +27,7 @@ public class BookController {
     public Book getBookById(@PathVariable Long id) {
         return bookRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(
-                        HttpStatus.NOT_FOUND, "Boek niet gevonden"));
+                        HttpStatus.NOT_FOUND, "Boek niet gevonden."));
     }
 
     @PostMapping
@@ -35,18 +35,18 @@ public class BookController {
     public Book addBook(@RequestBody Book book) {
         if (book.getIsbn() == null || book.getIsbn().isBlank()) {
             throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "ISBN is verplicht");
+                    HttpStatus.BAD_REQUEST, "ISBN is verplicht.");
         }
 
         if (bookRepository.findByIsbn(book.getIsbn()).isPresent()) {
             throw new ResponseStatusException(
-                    HttpStatus.CONFLICT, "Dit ISBN bestaat al");
+                    HttpStatus.CONFLICT, "Dit ISBN bestaat al.");
         }
 
         if (book.getPrice() == null || book.getPrice().signum() < 0
                 || book.getStock() < 0) {
             throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "Ongeldige prijs of voorraad");
+                    HttpStatus.BAD_REQUEST, "Ongeldige prijs of voorraad.");
         }
 
         return bookRepository.save(book);
