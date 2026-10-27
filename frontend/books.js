@@ -148,7 +148,7 @@ async function reserveBook(bookId) {
         }
 
         message.textContent =
-            "Boek succevol gereserveerd! ♡ Je kan dit ophalen op " +
+            "Boek succevol gereserveerd! Je kan dit ophalen op " +
             data.pickupDate + ".";
 
         message.style.color = "green";

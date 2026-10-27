@@ -28,14 +28,14 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 ### Backend
 
 - [ ] Controleren welke API-endpoints toegankelijk moeten zijn voor ingelogde gebruikers.
-- [ ] Functionaliteit maken om boeken te reserveren.
+- [x] Functionaliteit maken om boeken te reserveren.
 - [ ] De voorraad aanpassen wanneer een reservatie wordt bevestigd.
 - [ ] Functionaliteit voor reviews toevoegen.
 - [ ] Invoer controleren en foutmeldingen verbeteren.
 
 ### Frontend
 
-- [ ] Boeken ophalen uit de backend en weergeven op de website.
+- [x] Boeken ophalen uit de backend en weergeven op de website.
 - [ ] Een boekendetailpagina of detailweergave maken.
 - [ ] Een reservatieformulier toevoegen.
 - [ ] De verschillende pagina's testen op een normale schermgrootte en op mobiel.
