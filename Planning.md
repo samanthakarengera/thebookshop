@@ -18,13 +18,15 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 - [x] Een controller gemaakt voor de gebruikers.
 - [x] Een repository gemaakt om gebruikers opslaan en op e-mail zoeken.
 - [x] De projectstructuur en documentatie gemaakt.
+- [x] Registratie testen en eventuele fouten oplossen.
+- [x] Login correct laten werken en testen.
+- [x] De registratiepagina afwerken.
+- [x] Een loginpagina maken in dezelfde stijl.
 
 ## 3. Nog uit te voeren taken
 
 ### Backend
 
-- [ ] Registratie testen en eventuele fouten oplossen.
-- [ ] Login correct laten werken en testen.
 - [ ] Controleren welke API-endpoints toegankelijk moeten zijn voor ingelogde gebruikers.
 - [ ] Functionaliteit maken om boeken te reserveren.
 - [ ] De voorraad aanpassen wanneer een reservatie wordt bevestigd.
@@ -33,8 +35,6 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 
 ### Frontend
 
-- [ ] De registratiepagina afwerken.
-- [ ] Een loginpagina maken in dezelfde stijl.
 - [ ] Boeken ophalen uit de backend en weergeven op de website.
 - [ ] Een boekendetailpagina of detailweergave maken.
 - [ ] Een reservatieformulier toevoegen.
@@ -43,8 +43,8 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 ### Testen
 
 - [ ] Controleren of boeken correct worden opgehaald en toegevoegd.
-- [ ] Controleren of registratie werkt met geldige en ongeldige gegevens.
-- [ ] Controleren of gebruikers kunnen inloggen.
+- [x] Controleren of registratie werkt met geldige en ongeldige gegevens.
+- [x] Controleren of gebruikers kunnen inloggen.
 - [ ] Controleren of een reservatie de voorraad correct aanpast.
 - [ ] Controleren of fouten op een duidelijke manier worden weergegeven.
 - [ ] De belangrijkste testresultaten documenteren.
