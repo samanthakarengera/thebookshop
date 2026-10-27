@@ -52,11 +52,27 @@ public class SecurityConfig {
         return new HttpSessionSecurityContextRepository();
     }
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(
-            HttpSecurity http) throws Exception {
 
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .cors(cors -> cors.configurationSource(request -> {
+                    org.springframework.web.cors.CorsConfiguration config =
+                            new org.springframework.web.cors.CorsConfiguration();
+
+                    config.setAllowedOrigins(
+                            java.util.List.of("http://127.0.0.1:5500")
+                    );
+                    config.setAllowedMethods(
+                            java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                    );
+                    config.setAllowedHeaders(
+                            java.util.List.of("*")
+                    );
+                    config.setAllowCredentials(true);
+
+                    return config;
+                }))
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
@@ -73,4 +89,5 @@ public class SecurityConfig {
 
         return http.build();
     }
+
 }
