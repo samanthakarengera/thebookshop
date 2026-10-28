@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-
+/**
+ * REST-controller voor de boekencatalogus.
+ * Alle endpoints staan onder {@code /api/books}.
+ */
 @RestController
 @RequestMapping("/api/books")
 public class BookController {
@@ -17,10 +20,25 @@ public class BookController {
         this.bookRepository = bookRepository;
     }
 
+    /**
+     * Geeft alle boeken in de catalogus terug.
+     *
+     * @return de lijst van alle boeken met hun voorraad
+     */
     @GetMapping
     public List<Book> getBooks() {
         return bookRepository.findAll();
     }
+
+    /**
+     * Geeft één boek terug op basis van zijn id.
+     *
+     * @param id het id van het boek
+     * @return het gevonden boek
+     * @throws ResponseStatusException 404 als het boek niet bestaat
+     */
+    @GetMapping("/{id}")
+    public Book getBookById(@PathVariable Long id) {
 
     @GetMapping("/{id}")
     public Book getBookById(@PathVariable Long id) {
@@ -29,6 +47,14 @@ public class BookController {
                         HttpStatus.NOT_FOUND, "Boek niet gevonden."));
     }
 
+    /**
+     * Voegt een nieuw boek toe aan de catalogus.
+     *
+     * @param book het nieuwe boek
+     * @return het opgeslagen boek
+     * @throws ResponseStatusException 400 bij een ontbrekend ISBN of een ongeldige prijs of voorraad,
+     *                                 409 als het ISBN al bestaat
+     */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Book addBook(@RequestBody Book book) {
