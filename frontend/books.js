@@ -73,7 +73,7 @@ function displayBooks(bookArray) {
 
         card.appendChild(title);
         card.appendChild(author);
-        card.appendChild(description);
+        //card.appendChild(description);
         card.appendChild(price);
         card.appendChild(stock);
             const detailsButton = document.createElement("button");
@@ -130,43 +130,3 @@ logoutButton.addEventListener("click", function () {
 loadBooks();
 loadUser();
 
-/*
-async function reserveBook(bookId) {
-    try {
-        const response = await fetch(
-            "http://localhost:8080/api/reservations/" + bookId,
-            {
-                method: "POST",
-                credentials: "include"
-            }
-        );
-
-        if (response.status === 401) {
-            message.textContent = "Log in om het boek te reserveren.";
-            message.style.color = "red";
-            return;
-        }
-
-        const data = await response.json();
-
-        if (!response.ok) {
-            message.textContent =
-                "Fout " + response.status + ": " + JSON.stringify(data);
-            message.style.color = "red";
-            return;
-        }
-
-        message.textContent =
-            "Boek succevol gereserveerd! Je kan dit ophalen op " +
-            data.pickupDate + ".";
-
-        message.style.color = "green";
-
-    } catch (error) {
-        message.textContent =
-            error.message || "Oeps! Iets ging mis. Probeer opnieuw.";
-
-        message.style.color = "red";
-    }
-        
-} */
