@@ -10,7 +10,11 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
 import java.math.BigDecimal;
-
+/**
+ * Een boek in de catalogus.
+ * Het ISBN is uniek. De voorraad geeft aan hoeveel exemplaren nog beschikbaar zijn
+ * en daalt wanneer een boek wordt gereserveerd.
+ */
 @Entity
 public class Book {
 
@@ -20,7 +24,7 @@ public class Book {
 
     @Column(unique = true, nullable = false)
     private String isbn;
-
+    /** De categorie van het boek, bijvoorbeeld THRILLER of SCIFI. Mag leeg zijn. */
     @Enumerated(EnumType.STRING)
     private BookCategory category;
 
