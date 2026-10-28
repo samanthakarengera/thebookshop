@@ -8,12 +8,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 
-@Entity
+@Entity  //gekoppeld aan DBtabel
 @Table(name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //telt zelf automatisch op bij elke nieuwe gebruiker
     private Long id;
 
     @Column(nullable = false)
@@ -23,10 +23,11 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    private String password;
+    private String password; // de gehashte (veilig gecodeerde) versie vh wachtwoord
 
     public User() {
-    }
+        
+    } 
 
     public Long getId() {
         return id;
@@ -55,4 +56,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-}
+} 

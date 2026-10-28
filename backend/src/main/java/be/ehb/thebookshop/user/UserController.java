@@ -15,15 +15,18 @@ import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-@RestController
-@RequestMapping("/api/users")
+@RestController //zegt Spring dat dees een controller is die JSON-data terugstuurt naar JS
+@RequestMapping("/api/users") // basis-URL voor alle endpoints
 public class UserController {
 
+    // alle dependencies die nodig zijn
     private final UserService userService;
-    private final UserRepository userRepository;
+    private final UserRepository userRepository; // DAO
     private final AuthenticationManager authenticationManager;
     private final SecurityContextRepository securityContextRepository;
 
+
+    // DEPENDENCY INJECTION
     public UserController(
             UserService userService,
             UserRepository userRepository,
@@ -72,7 +75,7 @@ public class UserController {
                         HttpStatus.NOT_FOUND,
                         "Gebruiker niet gevonden"));
 
-        return new AuthResponse(
+        return new AuthResponse( //geen wachtwoord teruggeven naar JS voor veiligheid
                 user.getId(),
                 user.getName(),
                 user.getEmail()
