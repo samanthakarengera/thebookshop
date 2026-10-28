@@ -52,7 +52,7 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 - [x] Een profielpagina maken.
 - [ ] Reviews tonen op de detailpagina en laten schrijven vanuit het profiel.
 - [ ] De uitlogknop de sessie laten beëindigen.
-- [ ] De verschillende pagina's testen op een normale schermgrootte en op mobiel.
+- [x] De verschillende pagina's testen op een normale schermgrootte en op mobiel.
 - [] Optioneel: categorie tonen op de detailpagina en filteren in de catalogus.
 
 ### Testen
