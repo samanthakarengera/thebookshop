@@ -22,14 +22,25 @@ import org.springframework.http.HttpMethod;
 
 import java.util.List;
 
+/**
+ * Beveiligingsinstellingen van de applicatie.
+ * <ul>
+ *   <li>Login via een sessiecookie (JSESSIONID).</li>
+ *   <li>CORS staat enkel de frontend op poort 5500 toe, met cookies.</li>
+ *   <li>CSRF-bescherming staat bewust uit omdat de API met JSON werkt
+ *       en er geen formulieren op de server zijn.</li>
+ *   <li>Wie niet is ingelogd krijgt 401 in plaats van 403.</li>
+ * </ul>
+ */
 @Configuration
 public class SecurityConfig {
 
+    /** Versleutelt wachtwoorden met BCrypt, zodat ze nooit leesbaar worden opgeslagen. */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
+    /** Laadt een gebruiker op e-mailadres voor Spring Security. Elke gebruiker krijgt de rol USER. */
     @Bean
     public UserDetailsService userDetailsService(UserRepository userRepository) {
         return email -> userRepository.findByEmail(email)

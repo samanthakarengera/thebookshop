@@ -1,7 +1,10 @@
 const loginForm = document.getElementById("loginForm");
 const message = document.getElementById("message");
 const API = "http://localhost:8080/api";
-
+/**
+ * login.js: verstuurt het loginformulier naar POST /api/users/login
+ * en stuurt bij succes door naar books.html.
+ */
 loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 

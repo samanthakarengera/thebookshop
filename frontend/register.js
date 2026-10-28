@@ -1,7 +1,10 @@
 const form = document.getElementById("registerForm");
 const message = document.getElementById("message");
 const API = "http://localhost:8080/api";
-
+/**
+ * register.js: verstuurt het registratieformulier naar POST /api/users/register,
+ * logt daarna automatisch in en stuurt door naar books.html.
+ */
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
