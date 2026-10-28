@@ -70,6 +70,8 @@ public class SecurityConfig {
                     return config;
                 }))
                 .csrf(csrf -> csrf.disable())
+                .headers(headers -> headers
+                        .frameOptions(frame -> frame.sameOrigin()))
                 .securityContext(context -> context
                         .securityContextRepository(securityContextRepository))
                 // NIEUW: niet ingelogd geeft 401 in plaats van 403
