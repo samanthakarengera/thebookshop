@@ -1,0 +1,74 @@
+[
+  {
+    "isbn": "9780547928227",
+    "title": "The Hobbit",
+    "authors": "J.R.R. Tolkien",
+    "description": "Bilbo Baggins wordt tegen wil en dank meegenomen op een gevaarlijke queeste naar een drakenschat.",
+    "price": 12.99,
+    "stock": 8,
+    "category": "FANTASY"
+  },
+  {
+    "isbn": "9780441172719",
+    "title": "Dune",
+    "authors": "Frank Herbert",
+    "description": "Op de woestijnplaneet Arrakis vecht Paul Atreides om het lot van zijn familie en van de kostbaarste grondstof van het universum.",
+    "price": 14.50,
+    "stock": 6,
+    "category": "SCIFI"
+  },
+  {
+    "isbn": "9780451524935",
+    "title": "1984",
+    "authors": "George Orwell",
+    "description": "Winston Smith leeft in een samenleving waar Big Brother alles ziet en de waarheid voortdurend wordt herschreven.",
+    "price": 9.99,
+    "stock": 10,
+    "category": "SCIFI"
+  },
+  {
+    "isbn": "9780345391803",
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "authors": "Douglas Adams",
+    "description": "Vlak voor de aarde wordt gesloopt, begint Arthur Dent aan een absurde reis door de ruimte.",
+    "price": 10.95,
+    "stock": 7,
+    "category": "COMEDIE"
+  },
+  {
+    "isbn": "9780060853983",
+    "title": "Good Omens",
+    "authors": "Terry Pratchett, Neil Gaiman",
+    "description": "Een engel en een demon proberen samen het einde van de wereld te voorkomen.",
+    "price": 11.99,
+    "stock": 5,
+    "category": "COMEDIE"
+  },
+  {
+    "isbn": "9780307588371",
+    "title": "Gone Girl",
+    "authors": "Gillian Flynn",
+    "description": "Op hun vijfde huwelijksverjaardag verdwijnt Amy, en haar man wordt de hoofdverdachte.",
+    "price": 13.49,
+    "stock": 4,
+    "category": "THRILLER"
+  },
+  {
+    "isbn": "9780307269751",
+    "title": "The Girl with the Dragon Tattoo",
+    "authors": "Stieg Larsson",
+    "description": "Een journalist en een briljante hacker onderzoeken een decennia oude verdwijning.",
+    "price": 13.99,
+    "stock": 6,
+    "category": "THRILLER"
+  },
+  {
+    "isbn": "9780141439518",
+    "title": "Pride and Prejudice",
+    "authors": "Jane Austen",
+    "description": "Elizabeth Bennet en meneer Darcy botsen op elkaars trots en vooroordelen.",
+    "price": 8.99,
+    "stock": 9,
+    "category": "ROMAN"
+  }
+]

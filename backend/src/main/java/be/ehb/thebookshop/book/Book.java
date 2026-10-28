@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 import java.math.BigDecimal;
 
@@ -18,6 +20,9 @@ public class Book {
 
     @Column(unique = true, nullable = false)
     private String isbn;
+
+    @Enumerated(EnumType.STRING)
+    private BookCategory category;
 
     private String title;
     private String authors;
@@ -81,5 +86,13 @@ public class Book {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public BookCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(BookCategory category) {
+        this.category = category;
     }
 }
