@@ -95,7 +95,7 @@ ChatGPT chat (AI-tool): https://chatgpt.com/share/6adfe962-c23c-83ed-9c34-da2564
 
 Tutorial: https://blog.jetbrains.com/idea/2024/03/getting-started-with-databases-in-intellij-idea/
 
-Google Gemini: debuggen van beveiliging (reserveerknop), opsporen van 403/401-fout
+Google Gemini: debuggen van beveiliging (reserveerknop), opsporen van 403/401-fout + documentatie (Javadoc)
 
 
 Spring Boot-documentatie: https://spring.io/projects/spring-boot
