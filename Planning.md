@@ -37,9 +37,9 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 - [ ] Controleren welke API-endpoints toegankelijk moeten zijn voor ingelogde gebruikers (bv. `POST /api/books` beperken).
 - [x] Functionaliteit maken om boeken te reserveren.
 - [x] De voorraad verlagen wanneer een reservatie wordt gemaakt (met afhaaldatum als bevestiging).
-- [ ] Functionaliteit voor reviews toevoegen.
+- [x] Functionaliteit voor reviews toevoegen.
 - [x] Reservaties teruggeven
-- [ ] Een echt logout-endpoint toevoegen.
+- [x] Een echt logout-endpoint toevoegen.
 - [ ] Invoer controleren en foutmeldingen verbeteren.
 - [ ] Optioneel: adminrol en voorraadbeheer.
 - [x] Optioneel: categorie per boek (thriller, comedy, roman, sci-fi).
@@ -50,10 +50,11 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 - [x] Een boekendetailpagina of detailweergave maken.
 - [x] Een pagina met de reservaties van de gebruiker maken.
 - [x] Een profielpagina maken.
-- [ ] Reviews tonen op de detailpagina en laten schrijven vanuit het profiel.
-- [ ] De uitlogknop de sessie laten beëindigen.
+- [x] Reviews tonen op de detailpagina en laten schrijven vanuit het profiel.
+- [x] De uitlogknop de sessie laten beëindigen.
 - [x] De verschillende pagina's testen op een normale schermgrootte en op mobiel.
-- [] Optioneel: categorie tonen op de detailpagina en filteren in de catalogus.
+- [x] Optioneel: categorie tonen op de detailpagina en filteren in de catalogus.
+- [] Optioneel: categorie filteren in de catalogus.
 
 ### Testen
 
