@@ -42,7 +42,7 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 - [ ] Een echt logout-endpoint toevoegen.
 - [ ] Invoer controleren en foutmeldingen verbeteren.
 - [ ] Optioneel: adminrol en voorraadbeheer.
-- [ ] Optioneel: categorie per boek (thriller, comedy, roman, sci-fi).
+- [x] Optioneel: categorie per boek (thriller, comedy, roman, sci-fi).
 
 ### Frontend
 
@@ -53,7 +53,7 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 - [ ] Reviews tonen op de detailpagina en laten schrijven vanuit het profiel.
 - [ ] De uitlogknop de sessie laten beëindigen.
 - [ ] De verschillende pagina's testen op een normale schermgrootte en op mobiel.
-- [ ] Optioneel: categorie tonen op de detailpagina en filteren in de catalogus.
+- [] Optioneel: categorie tonen op de detailpagina en filteren in de catalogus.
 
 ### Testen
 
