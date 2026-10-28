@@ -96,6 +96,10 @@ Eventuele geautomatiseerde tests en hun resultaten worden toegevoegd zodra ze zi
 
 ChatGPT chat (AI-tool): https://chatgpt.com/share/6adfe962-c23c-83ed-9c34-da25642ba66e
 
+Tutorial: https://blog.jetbrains.com/idea/2024/03/getting-started-with-databases-in-intellij-idea/
+
+Google Gemini: debuggen van beveiliging (reserveerknop)
+
 Spring Boot-documentatie: https://spring.io/projects/spring-boot
 
 H2 Database-documentatie: https://www.h2database.com/
