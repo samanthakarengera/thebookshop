@@ -21,24 +21,39 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 - [x] Registratie testen en eventuele fouten oplossen.
 - [x] Login correct laten werken en testen.
 - [x] De registratiepagina afwerken.
-- [x] Een loginpagina maken in dezelfde stijl.
+- [x] Een loginpagina maken.
+- [x] Beveiliging met Spring Security afgewerkt: sessies, CORS met cookies en een 401-antwoord wanneer de gebruiker niet is ingelogd.
+- [x] Sessieproblemen opgelost (login bewaart de sessie, één host `localhost` voor frontend en backend).
+- [x] Na registratie automatisch inloggen.
+- [x] Reservatiefunctionaliteit in de backend (reserveren en eigen reservaties ophalen).
+- [x] Boekendetailpagina gemaakt.
+- [x] Pagina "Mijn reservaties" gemaakt.
+- [x] Profielpagina gemaakt met gegevens van de gebruiker en zijn boeken.
 
 ## 3. Nog uit te voeren taken
 
 ### Backend
 
-- [ ] Controleren welke API-endpoints toegankelijk moeten zijn voor ingelogde gebruikers.
+- [ ] Controleren welke API-endpoints toegankelijk moeten zijn voor ingelogde gebruikers (bv. `POST /api/books` beperken).
 - [x] Functionaliteit maken om boeken te reserveren.
-- [ ] De voorraad aanpassen wanneer een reservatie wordt bevestigd.
+- [x] De voorraad verlagen wanneer een reservatie wordt gemaakt (met afhaaldatum als bevestiging).
 - [ ] Functionaliteit voor reviews toevoegen.
+- [x] Reservaties teruggeven
+- [ ] Een echt logout-endpoint toevoegen.
 - [ ] Invoer controleren en foutmeldingen verbeteren.
+- [ ] Optioneel: adminrol en voorraadbeheer.
+- [ ] Optioneel: categorie per boek (thriller, comedy, roman, sci-fi).
 
 ### Frontend
 
 - [x] Boeken ophalen uit de backend en weergeven op de website.
-- [ ] Een boekendetailpagina of detailweergave maken.
-- [ ] Een reservatieformulier toevoegen.
+- [x] Een boekendetailpagina of detailweergave maken.
+- [x] Een pagina met de reservaties van de gebruiker maken.
+- [x] Een profielpagina maken.
+- [ ] Reviews tonen op de detailpagina en laten schrijven vanuit het profiel.
+- [ ] De uitlogknop de sessie laten beëindigen.
 - [ ] De verschillende pagina's testen op een normale schermgrootte en op mobiel.
+- [ ] Optioneel: categorie tonen op de detailpagina en filteren in de catalogus.
 
 ### Testen
 
@@ -46,14 +61,16 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 - [x] Controleren of registratie werkt met geldige en ongeldige gegevens.
 - [x] Controleren of gebruikers kunnen inloggen.
 - [ ] Controleren of een reservatie de voorraad correct aanpast.
+- [ ] Minstens drie geautomatiseerde tests schrijven (bv. voorraad daalt, geen voorraad geeft fout, onbekend boek geeft fout).
 - [ ] Controleren of fouten op een duidelijke manier worden weergegeven.
 - [ ] De belangrijkste testresultaten documenteren.
 
 ### Afronding
 
+- [ ] Documentatie toevoegen: Javadoc bij klassen en methodes en een beschrijving van de endpoints.
 - [ ] De README en de planning bijwerken.
 - [x] De gebruikte bronnen en AI-hulpmiddelen vermelden.
-- [ ] De projectstructuur en bestanden controleren.
+- [ ] De projectstructuur en bestanden controleren (één hoofdmap met backend en frontend als aparte projecten).
 - [ ] Controleren of het project vanaf een nieuwe installatie kan worden opgestart.
 - [ ] De finale versie naar GitHub pushen en de indiening controleren.
 

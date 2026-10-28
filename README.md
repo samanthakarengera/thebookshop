@@ -47,7 +47,7 @@ De database-instellingen zijn terug te vinden in src/main/resources/application.
 
 Open de map frontend in Visual Studio Code.
 
-Open index.html met de extensie Live Server.
+Open register.html met de extensie Live Server.
 
 Zorg ervoor dat de backend actief is wanneer de frontend gegevens opvraagt.
 
