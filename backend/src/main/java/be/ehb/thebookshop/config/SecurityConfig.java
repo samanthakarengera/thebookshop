@@ -18,6 +18,7 @@ import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.http.HttpMethod;
 
 import java.util.List;
 
@@ -84,6 +85,7 @@ public class SecurityConfig {
                                 "/api/users/login",
                                 "/api/books",
                                 "/api/books/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/books/*/reviews").authenticated()
                         .requestMatchers(
                                 "/api/users/me",
                                 "/api/reservations",

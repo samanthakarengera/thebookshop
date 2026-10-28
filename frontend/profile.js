@@ -72,7 +72,7 @@ async function loadPurchasedBooks() {
             pickup.textContent = "Af te halen op: " + reservation.pickupDate;
 
             const detailsButton = document.createElement("button");
-            detailsButton.textContent = "Bekijk details";
+            detailsButton.textContent = "Bekijk details of schrijf een review";
             detailsButton.addEventListener("click", function () {
                 window.location.href =
                     "book-detail.html?id=" + reservation.book.id;
