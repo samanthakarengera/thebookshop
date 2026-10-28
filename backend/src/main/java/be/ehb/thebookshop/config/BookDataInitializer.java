@@ -26,7 +26,7 @@ public class BookDataInitializer implements CommandLineRunner {
         this.bookRepository = bookRepository;
         this.objectMapper = objectMapper;
     }
-
+    /** Laadt de boeken uit books.json, maar alleen als de catalogus nog leeg is. */
     @Override
     public void run(String... args) throws Exception {
         if (bookRepository.count() > 0) {

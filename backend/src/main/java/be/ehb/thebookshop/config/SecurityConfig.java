@@ -51,18 +51,22 @@ public class SecurityConfig {
                 .orElseThrow(() ->
                         new UsernameNotFoundException("Gebruiker niet gevonden"));
     }
-
+    /** Controleert bij het inloggen of het e-mailadres en het wachtwoord kloppen. */
     @Bean
     public AuthenticationManager authenticationManager(
             AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
     }
-
+    /** Bewaart de beveiligingscontext in de HTTP-sessie, zodat de gebruiker ingelogd blijft. */
     @Bean
     public SecurityContextRepository securityContextRepository() {
         return new HttpSessionSecurityContextRepository();
     }
-
+    /**
+     * Bepaalt welke endpoints open zijn en welke een login vragen.
+     * Boeken en reviews lezen is open. Reserveren, reviews plaatsen en het eigen profiel
+     * vragen een login. Het logout-endpoint beëindigt de sessie.
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(
             HttpSecurity http,
