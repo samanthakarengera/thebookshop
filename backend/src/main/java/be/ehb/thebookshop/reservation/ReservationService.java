@@ -48,6 +48,9 @@ public class ReservationService {
                     "Dit boek is niet in voorraad");
         }
 
+        // Reserveer één exemplaar.
+        book.setStock(book.getStock() - 1);
+        bookRepository.save(book);
         // De reservering opslaan.
         Reservation reservation = new Reservation(user, book);
 

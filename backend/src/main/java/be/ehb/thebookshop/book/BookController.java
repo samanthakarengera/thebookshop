@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/books")
-@CrossOrigin //Laat verzoeken toe vanaf andere origins, bv een frontend op een andere poort
 public class BookController {
 
     private final BookRepository bookRepository; //bewaart de verwijzing naar de repo

@@ -1,5 +1,5 @@
-
 const bookDetails = document.getElementById("bookDetails");
+const API = "http://localhost:8080/api";
 
 // Het boek-ID ophalen uit de URL.
 const parameters = new URLSearchParams(window.location.search);
@@ -13,9 +13,7 @@ async function loadBookDetails() {
     }
 
     try {
-        const response = await fetch(
-            "http://127.0.0.1:8080/api/books/" + bookId
-        );
+        const response = await fetch(`${API}/books/${bookId}`);
 
         if (!response.ok) {
             throw new Error("Boek niet gevonden.");

@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -16,7 +17,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin
 public class UserController {
 
     private final UserService userService;
@@ -41,45 +41,25 @@ public class UserController {
         return userService.register(request);
     }
 
+
+
     @PostMapping("/login")
-    public AuthResponse login(
-            @RequestBody LoginRequest request,
-            HttpServletRequest httpRequest,
-            HttpServletResponse httpResponse) {
+    public ResponseEntity<?> login(@RequestBody LoginRequest request,
+                                   HttpServletRequest httpRequest,
+                                   HttpServletResponse httpResponse) {
 
-        try {
-            Authentication authentication =
-                    authenticationManager.authenticate(
-                            new UsernamePasswordAuthenticationToken(
-                                    request.getEmail().trim().toLowerCase(),
-                                    request.getPassword()
-                            )
-                    );
+        Authentication auth = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getEmail(), request.getPassword()));
 
-            SecurityContext context =
-                    SecurityContextHolder.createEmptyContext();
+        SecurityContext context = SecurityContextHolder.createEmptyContext();
+        context.setAuthentication(auth);
+        SecurityContextHolder.setContext(context);
 
-            context.setAuthentication(authentication);
-            SecurityContextHolder.setContext(context);
+        // Zonder deze regel wordt de sessie niet bewaard
+        securityContextRepository.saveContext(context, httpRequest, httpResponse);
 
-            securityContextRepository.saveContext(
-                    context, httpRequest, httpResponse);
-
-            User user = userRepository
-                    .findByEmail(authentication.getName())
-                    .orElseThrow();
-
-            return new AuthResponse(
-                    user.getId(),
-                    user.getName(),
-                    user.getEmail()
-            );
-
-        } catch (org.springframework.security.core.AuthenticationException e) {
-            throw new ResponseStatusException(
-                    HttpStatus.UNAUTHORIZED,
-                    "Ongeldig e-mailadres of wachtwoord");
-        }
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/me")

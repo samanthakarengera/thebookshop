@@ -4,13 +4,14 @@ const bookCount = document.getElementById("bookCount");
 const message = document.getElementById("message");
 const welcomeMessage = document.getElementById("welcomeMessage");
 const logoutButton = document.getElementById("logoutButton");
+const API = "http://localhost:8080/api";
 
 let books = [];
 
 // De boeken ophalen uit de backend.
 async function loadBooks() {
     try {
-        const response = await fetch("http://localhost:8080/api/books");
+        const response = await fetch(`${API}/books`);
 
         if (!response.ok) {
             throw new Error("Kan de boeken niet laden.");
@@ -66,7 +67,8 @@ function displayBooks(bookArray) {
         }
 
         reserveButton.addEventListener("click", function () {
-            reserveBook(book.id);
+        window.location.href =
+        "reservations.html?bookId=" + book.id;
         });
 
         card.appendChild(title);
@@ -128,7 +130,7 @@ logoutButton.addEventListener("click", function () {
 loadBooks();
 loadUser();
 
-
+/*
 async function reserveBook(bookId) {
     try {
         const response = await fetch(
@@ -166,4 +168,5 @@ async function reserveBook(bookId) {
 
         message.style.color = "red";
     }
-}
+        
+} */

@@ -1,54 +1,97 @@
+const API = "http://localhost:8080/api";
 
-const reservationList = document.getElementById("reservationList");
 const message = document.getElementById("message");
+const reservationList = document.getElementById("reservationList");
 
+const params = new URLSearchParams(window.location.search);
+const bookId = params.get("bookId");
+
+// De reserveringen van de ingelogde gebruiker ophalen en tonen.
 async function loadReservations() {
     try {
-        const response = await fetch(
-            "http://localhost:8080/api/reservations",
-            {
-                credentials: "include"
-            }
-        );
+        const response = await fetch(`${API}/reservations`, {
+            credentials: "include"
+        });
+
+        if (response.status === 401) {
+            message.textContent = "Log eerst in om je reservaties te zien.";
+            message.style.color = "red";
+            return;
+        }
 
         if (!response.ok) {
-            message.textContent =
-                "Kan de reserveringen niet laden. Log in.";
-            return;
+            throw new Error("Fout " + response.status);
         }
 
         const reservations = await response.json();
-
-        if (reservations.length === 0) {
-            reservationList.textContent = "U heeft nog niks gereserveerd.";
-            return;
-        }
-
-        reservations.forEach(function (reservation) {
-            const card = document.createElement("div");
-            card.className = "book-card";
-
-            const title = document.createElement("h3");
-            title.textContent = reservation.book.title;
-
-            const pickup = document.createElement("p");
-            pickup.textContent =
-                "Ophaaldatum: " + reservation.pickupDate;
-
-            const status = document.createElement("p");
-            status.textContent = "Status: " + reservation.status;
-
-            card.appendChild(title);
-            card.appendChild(pickup);
-            card.appendChild(status);
-
-            reservationList.appendChild(card);
-        });
+        displayReservations(reservations);
 
     } catch (error) {
         message.textContent =
-            "Lukt niet.";
+            "Kan de reservaties niet laden: " + error.message;
+        message.style.color = "red";
     }
 }
 
-loadReservations();
+// De reserveringen op de pagina tonen.
+function displayReservations(reservations) {
+    reservationList.innerHTML = "";
+
+    if (reservations.length === 0) {
+        reservationList.textContent = "Je hebt nog geen reservaties.";
+        return;
+    }
+
+    reservations.forEach(function (reservation) {
+        const card = document.createElement("div");
+        card.className = "book-card";
+
+        const title = document.createElement("h3");
+        title.textContent = reservation.book
+            ? reservation.book.title
+            : "Boek #" + reservation.id;
+
+        const pickup = document.createElement("p");
+        pickup.textContent =
+            "Af te halen op: " + (reservation.pickupDate || "onbekend");
+
+        card.appendChild(title);
+        card.appendChild(pickup);
+        reservationList.appendChild(card);
+    });
+}
+
+// Een boek reserveren (alleen als er een bookId in de URL staat).
+async function reserveSelectedBook() {
+    if (!bookId) {
+        await loadReservations();
+        return;
+    }
+
+    const response = await fetch(`${API}/reservations/${bookId}`, {
+        method: "POST",
+        credentials: "include"
+    });
+
+    if (response.status === 401) {
+        message.textContent = "Log eerst in om te reserveren.";
+        message.style.color = "red";
+        return;
+    }
+
+    if (!response.ok) {
+        message.textContent =
+            "De reservering is niet gelukt (" + response.status + ").";
+        message.style.color = "red";
+        return;
+    }
+
+    // bookId uit de URL halen, zodat vernieuwen niet opnieuw reserveert.
+    window.history.replaceState({}, "", window.location.pathname);
+    await loadReservations();
+
+    message.textContent = "Je boek is gereserveerd!";
+    message.style.color = "green";
+}
+
+reserveSelectedBook();

@@ -1,6 +1,6 @@
-
 const loginForm = document.getElementById("loginForm");
 const message = document.getElementById("message");
+const API = "http://localhost:8080/api";
 
 loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -11,36 +11,28 @@ loginForm.addEventListener("submit", async function (event) {
     };
 
     try {
-        const response = await fetch(
-            "http://localhost:8080/api/users/login",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                credentials: "include",
-                body: JSON.stringify(user)
-            }
-        );
+        const response = await fetch(`${API}/users/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            credentials: "include",
+            body: JSON.stringify(user)
+        });
 
-        const data = await response.json();
+        if (response.status === 401) {
+            throw new Error("Verkeerd e-mailadres of wachtwoord.");
+        }
 
         if (!response.ok) {
-            throw new Error(
-                data.detail || data.message || "Login mislukt."
-            );
+            throw new Error("Login mislukt (" + response.status + ").");
         }
-        
-        message.textContent = "Succesvol ingelogd! ";
-        message.style.color = "green";
-        // Doorsturen naar de boekenpagina na succesvol inloggen.
-        // window.location.href = "books.html";
+
+        // De body is leeg bij een geslaagde login, dus geen response.json() hier.
+        window.location.href = "books.html";
 
     } catch (error) {
-        message.textContent = error.message === "Mislukt."
-            ? "Poging tot verbinden mislukt. Probeer opnieuw."
-            : error.message;
-
+        message.textContent = error.message;
         message.style.color = "red";
     }
 });

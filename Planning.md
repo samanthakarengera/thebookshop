@@ -62,4 +62,3 @@ De planning houdt bij welke onderdelen al uitgewerkt zijn en welke nog moeten ge
 Het project wordt stapsgewijs ontwikkeld. Eerst wordt de backend uitgewerkt en getest. Daarna worden de frontend en de koppeling met de API verder afgewerkt. Vervolgens worden de belangrijkste functionaliteiten getest en wordt de documentatie aangevuld.
 
 De takenlijst wordt tijdens het project bijgewerkt. Taken worden pas als voltooid aangeduid wanneer ze daadwerkelijk uitgevoerd en gecontroleerd zijn.
-

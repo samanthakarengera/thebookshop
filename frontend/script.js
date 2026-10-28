@@ -1,6 +1,7 @@
 
 const form = document.getElementById("registerForm");
 const message = document.getElementById("message");
+const API = "http://localhost:8080/api";
 
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -14,8 +15,7 @@ form.addEventListener("submit", async function (event) {
 
     try {
         // De gegevens naar de Spring Boot-backend sturen.
-        const response = await fetch(
-            "http://localhost:8080/api/users/register",
+        const response = await fetch(`${API}/users/register`,
             {
                 method: "POST",
                 headers: {
